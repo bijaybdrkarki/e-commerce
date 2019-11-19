@@ -1,0 +1,24 @@
+body{
+    background-color: antiquewhite;
+}
+.grid-display{
+    display: grid;
+    grid-template-columns: 0.9fr 0.3fr 0.4fr 0.7fr 1.2fr 2fr 5fr;
+}
+.heading-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr 2fr 5fr; 
+    padding-left: 0;
+    margin: 0;
+    
+}
+.quantity{
+    text-align: center;
+}
+.heading-display li{
+    list-style: none;
+    font-weight: bold;
+}
+p{
+    margin: 0;
+}
