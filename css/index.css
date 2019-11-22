@@ -1,5 +1,6 @@
 body{
     background-color: antiquewhite;
+    max-width: 900px;
 }
 .grid-display{
     display: grid;
@@ -21,4 +22,22 @@ body{
 }
 p{
     margin: 0;
+}
+.calculate{
+    margin: 1em 0;
+}
+.calcbutton{
+    font-size: 1em;
+    padding: 0.5em;
+}
+.calctotal{
+    margin: 1em 0;
+}
+.coupon{
+    display: grid;
+    grid-template-columns: auto auto 0.9fr;
+}
+.code{
+    font-size: 0.9em;
+    width: fit-content;
 }
