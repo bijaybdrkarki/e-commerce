@@ -79,7 +79,7 @@ function enterPromoCode(){
         let couponcode = window.prompt('Enter the code');
         if (couponcode === 'NOTAX')
         {
-            document.getElementById("tax").innerHTML = `$ 0.00 (By Notax coupon )`;
+            document.getElementById("tax").innerHTML = `$ 0.00 (By No-tax coupon)`;
             document.getElementById("total").innerHTML = subtotal[0]+subtotal[1];
         }
         else if(couponcode === 'FIFTYFIFTY')
