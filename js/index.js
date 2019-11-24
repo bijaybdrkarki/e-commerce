@@ -4,6 +4,8 @@ let pantminus= document.getElementById("pantminusbutton");
 let shirtplus =document.getElementById("shirtplusbutton");
 let shirtminus= document.getElementById("shirtminusbutton"); 
 let calculate= document.getElementById("calculate");
+let promocode = document.getElementById("promocode");
+
 
 function increasequantityofpant()
 {
@@ -65,8 +67,43 @@ function calcHstTotal(){
     document.getElementById("tax").innerHTML = `$ ${tax}`;
     document.getElementById("total").innerHTML = `$ ${total}`;
 }
+function enterPromoCode(){
+    let subtotal = (document.getElementById("subtotal").innerText).split(' ');
+    // console.log(subtotal);
+    if (subtotal[1]=='0.00')
+    {
+        window.alert('Buy something before entering code');
+    } 
+    else
+    {
+        let couponcode = window.prompt('Enter the code');
+        if (couponcode === 'NOTAX')
+        {
+            document.getElementById("tax").innerHTML = `$ 0.00 (By Notax coupon )`;
+            document.getElementById("total").innerHTML = subtotal[0]+subtotal[1];
+        }
+        else if(couponcode === 'FIFTYFIFTY')
+        {
+            let newsubtotal = (parseFloat(subtotal[1])*0.5).toFixed(2); 
+            let tax = (0.13*newsubtotal).toFixed(2);
+            let total= (parseFloat(newsubtotal)  + parseFloat(tax)).toFixed(2);
+            document.getElementById("subtotal").innerHTML = `$ ${newsubtotal} (By fiftyfifty coupon)`;
+            document.getElementById("tax").innerHTML = `$ ${tax}`;
+            document.getElementById("total").innerHTML = `$ ${total}`;
+        }
+        else{
+            window.alert(' Invalid code Try Again');
+        }
+    }    
+    
+    
+    
+}
+
+
 pantplus.addEventListener("click", increasequantityofpant);
 pantminus.addEventListener("click", dercreasequantityofpant);
 shirtplus.addEventListener("click", increasequantityofshirt);
 shirtminus.addEventListener("click", dercreasequantityofshirt);
 calculate.addEventListener("click", calcHstTotal);
+promocode.addEventListener("click", enterPromoCode);

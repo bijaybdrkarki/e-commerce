@@ -37,7 +37,17 @@ p{
     display: grid;
     grid-template-columns: auto auto 0.9fr;
 }
+.coupon p{
+    margin-top: 0.5em;
+}
 .code{
     font-size: 0.9em;
+    padding:0.5em;
     width: fit-content;
+}
+.entercode{
+    margin-top: 1em;
+}
+.couponinput{
+    font-size: 0.9em;
 }
