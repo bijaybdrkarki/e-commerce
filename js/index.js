@@ -5,6 +5,7 @@ let shirtplus =document.getElementById("shirtplusbutton");
 let shirtminus= document.getElementById("shirtminusbutton"); 
 let calculate= document.getElementById("calculate");
 let promocode = document.getElementById("promocode");
+let couponcode= document.getElementById("submit");
 
 
 function increasequantityofpant()
@@ -76,7 +77,12 @@ function enterPromoCode(){
     } 
     else
     {
-        let couponcode = window.prompt('Enter the code');
+        document.getElementById("notvisible").classList.replace("notvisible","visible");
+    }       
+}
+function checkCodeValidity(){
+    let couponcode = document.getElementById("codevalue").value;
+    
         if (couponcode === 'NOTAX')
         {
             document.getElementById("tax").innerHTML = `$ 0.00 (By No-tax coupon)`;
@@ -94,10 +100,6 @@ function enterPromoCode(){
         else{
             window.alert(' Invalid code Try Again');
         }
-    }    
-    
-    
-    
 }
 
 
@@ -107,3 +109,4 @@ shirtplus.addEventListener("click", increasequantityofshirt);
 shirtminus.addEventListener("click", dercreasequantityofshirt);
 calculate.addEventListener("click", calcHstTotal);
 promocode.addEventListener("click", enterPromoCode);
+couponcode.addEventListener("click", checkCodeValidity);

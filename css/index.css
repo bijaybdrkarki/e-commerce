@@ -58,3 +58,13 @@ p{
 .couponinput{
     font-size: 0.9em;
 }
+.notvisible{
+    display: none;
+}
+.visible{
+    display: block;
+    margin-top:0.5em;
+}
+.visible input{
+    font-size: 1em;
+}
