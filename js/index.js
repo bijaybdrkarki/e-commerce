@@ -81,8 +81,9 @@ function enterPromoCode(){
     }       
 }
 function checkCodeValidity(){
+    calcHstTotal();// prevent user from entering code multiple times
     let couponcode = document.getElementById("codevalue").value;
-    
+    let subtotal = (document.getElementById("subtotal").innerText).split(' ');
         if (couponcode === 'NOTAX')
         {
             document.getElementById("tax").innerHTML = `$ 0.00 (By No-tax coupon)`;
